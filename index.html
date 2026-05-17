@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablets in der Schule – Daten-Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink:          #172033;
+            --muted:        #667085;
+            --line:         #d8dee9;
+            --panel:        #ffffff;
+            --page:         #f4f7fb;
+            --primary:      #2563eb;
+            --primary-soft: #dbeafe;
+            --primary-faint:#eff6ff;
+            --accent:       #0f766e;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(37,99,235,.08), transparent 30rem),
+                linear-gradient(180deg, #f8fbff 0%, var(--page) 100%);
+            color: var(--ink);
+            min-height: 100vh;
+        }
+
+        .page-shell {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 32px 20px 64px;
+        }
+
+        /* ── HERO ─────────────────────────────────────────────── */
+        .hero { margin-bottom: 28px; }
+
+        .hero-main {
+            padding: 36px clamp(24px, 4vw, 52px);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: rgba(255,255,255,.92);
+            box-shadow: 0 20px 60px rgba(23,32,51,.08);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .eyebrow::before {
+            content: "";
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-soft);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 4vw, 3.8rem);
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            margin: 0 0 16px;
+        }
+
+        .hero-copy {
+            color: var(--muted);
+            font-size: .97rem;
+            line-height: 1.72;
+            max-width: 76ch;
+            margin: 0;
+        }
+
+        /* ── CARD GRID ────────────────────────────────────────── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .card-full { grid-column: 1 / -1; }
+
+        /* ── BASE CARD ────────────────────────────────────────── */
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            box-shadow: 0 6px 24px rgba(23,32,51,.06);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        h2.card-title {
+            margin: 0;
+            font-size: .95rem;
+            line-height: 1.3;
+            font-weight: 700;
+            padding-top: 2px;
+        }
+
+        .card-body {
+            color: #344054;
+            font-size: .84rem;
+            line-height: 1.68;
+            flex: 1;
+            margin: 0;
+        }
+
+        .source {
+            color: var(--muted);
+            font-size: .65rem;
+            line-height: 1.5;
+            padding-top: 10px;
+            border-top: 1px solid var(--line);
+        }
+        .source a { color: var(--primary); text-decoration: none; }
+        .source a:hover { text-decoration: underline; }
+
+        /* ── CHART CARD ───────────────────────────────────────── */
+        .chart-wrap {
+            position: relative;
+            height: 196px;
+            border-radius: 7px;
+            background: var(--primary-faint);
+            border: 1px solid #e5edf9;
+            padding: 12px;
+        }
+
+        /* ── STAT CARD ────────────────────────────────────────── */
+        .stat-row {
+            display: flex;
+            gap: 16px;
+            padding: 6px 0 2px;
+        }
+
+        .stat-item { flex: 1; }
+
+        .stat-val {
+            display: block;
+            font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -.03em;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-ctx {
+            display: block;
+            font-size: .7rem;
+            font-weight: 600;
+            color: var(--muted);
+            line-height: 1.3;
+        }
+
+        /* ── QUOTE CARD ───────────────────────────────────────── */
+        .quote-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            box-shadow: 0 6px 24px rgba(23,32,51,.06);
+            padding: 26px 30px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .quote-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .quote-mark {
+            font-size: 3.8rem;
+            line-height: .7;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            color: var(--primary-soft);
+            margin-bottom: -4px;
+        }
+
+        blockquote {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.72;
+            font-style: italic;
+            color: #1e293b;
+            flex: 1;
+        }
+
+        .quote-source {
+            color: var(--muted);
+            font-size: .65rem;
+            line-height: 1.5;
+            padding-top: 10px;
+            border-top: 1px solid var(--line);
+        }
+        .quote-source a { color: var(--primary); text-decoration: none; }
+        .quote-source a:hover { text-decoration: underline; }
+
+        /* ── SOURCES SECTION ─────────────────────────────────── */
+        .sources-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--line);
+        }
+
+        .sources-header {
+            margin-bottom: 20px;
+        }
+
+        h2.sources-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0 0 6px;
+        }
+
+        .sources-copy {
+            color: var(--muted);
+            font-size: .84rem;
+            line-height: 1.6;
+            margin: 0;
+            max-width: 64ch;
+        }
+
+        .sources-grid {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .sources-grid a {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            text-decoration: none;
+            transition: border-color .15s, box-shadow .15s;
+            height: 100%;
+        }
+
+        .sources-grid a:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 16px rgba(37,99,235,.10);
+        }
+
+        .src-type {
+            font-size: .62rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--primary);
+        }
+
+        .src-title {
+            font-size: .80rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.35;
+        }
+
+        .src-org {
+            font-size: .68rem;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        /* ── RESPONSIVE ───────────────────────────────────────── */
+        @media (max-width: 900px) {
+            .card-grid { grid-template-columns: 1fr; }
+            .card-full { grid-column: 1; }
+            .sources-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .page-shell { padding: 16px 12px 40px; }
+            .card, .quote-card { padding: 16px; }
+            .chart-wrap { height: 180px; }
+            .stat-val { font-size: 1.7rem; }
+            .sources-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<main class="page-shell">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-main">
+            <div class="eyebrow">Daten-Dashboard</div>
+            <h1>Tablets in der Schule: Fluch oder Segen?</h1>
+            <p class="hero-copy">
+                Aktuelle Studien und Daten zum Einsatz von Tablets in der Schule.  
+            </p>
+        </div>
+    </section>
+
+    <div class="card-grid" aria-label="Empirische Daten zu Tablets in der Schule">
+
+        <!-- 1 · Stat: Effektstärken -->
+        <article class="card">
+            <h2 class="card-title">Messbare Lernwirkung von Tablets</h2>
+            <div class="stat-row">
+                <div class="stat-item">
+                    <span class="stat-val">g = 0,615</span>
+                    <span class="stat-ctx">Lernleistung allgemein</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">g = 0,65</span>
+                    <span class="stat-ctx">MINT-Unterricht</span>
+                </div>
+            </div>
+            <p class="card-body">
+                Eine Meta-Analyse von Sung et al. (2016) ermittelt eine Effektstärke von g = 0,615 für Tablet-PCs auf die akademische Lernleistung – deutlich über dem Durchschnitt klassischer Computernutzung. Im MINT-Unterricht erzielt der Einsatz von Simulationen und Visualisierungen g = 0,65. Werte ab g = 0,4 gelten in der Bildungsforschung als pädagogisch bedeutsam.
+            </p>
+            <div class="source">
+                Quellen: <a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2021.642686/full" target="_blank" rel="noopener">Frontiers in Education 2021</a>
+                · <a href="https://mebis.bycs.de/beitrag/basisbeitrag-mint-unterricht-digital" target="_blank" rel="noopener">mebis Magazin</a>
+            </div>
+        </article>
+
+        <!-- 2 · Chart: Lernwirksamkeit nach Nutzungstyp -->
+        <article class="card">
+            <h2 class="card-title">Lernwirksamkeit nach Nutzungstyp</h2>
+            <div class="chart-wrap"><canvas id="cLernwirksamkeit"></canvas></div>
+            <p class="card-body">
+                Lernzuwächse hängen entscheidend von der Art der Nutzung ab. Interaktive und konstruktive Formen erzielen deutlich höhere Effekte als rein passiver Medienkonsum – nicht das Gerät, sondern die Didaktik entscheidet.
+            </p>
+            <div class="source">Quelle: Fischer &amp; Nörpel, 2024 / Wekerle et al., 2020</div>
+        </article>
+
+        <!-- 3 · Quote: Motivation & Kollaboration (full width) -->
+        <article class="quote-card card-full">
+            <div class="quote-mark">"</div>
+            <blockquote>
+                „Schülerinnen und Schüler in Tablet-Schulen berichteten von signifikant höherer intrinsischer Motivation und kollaborativen Lernformen als Schülerinnen und Schüler ohne 1:1-Ausstattung. Es zeigte sich in Deutsch, Mathematik und Biologie, dass eine systematische Tablet-Ausstattung zu mehr Kollaboration führt, was die Unterrichtsmotivation erhöht und so auch die Note verbessert."
+            </blockquote>
+            <div class="quote-source">
+                Abschlussbericht „Schule von morgen" – Universität Würzburg (2025)
+                · <a href="https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf" target="_blank" rel="noopener">Volltext (PDF)</a>
+            </div>
+        </article>
+
+        <!-- 4 · Stat: Tatsächliche Nutzung im Unterricht -->
+        <article class="card">
+            <h2 class="card-title">Tatsächliche Nutzung im Unterricht</h2>
+            <div class="stat-row">
+                <div class="stat-item">
+                    <span class="stat-val">1,8 %</span>
+                    <span class="stat-ctx">Instruktionsfremde Nutzung</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">5–8 Min.</span>
+                    <span class="stat-ctx">Aktive Nutzung pro 45 Min.</span>
+                </div>
+            </div>
+            <p class="card-body">
+                App-basierte Messungen zeigen: Tablets werden pro Unterrichtsstunde nur fünf bis acht Minuten aktiv eingesetzt. Der Ablenkungsanteil durch instruktionsfremde Nutzung liegt objektiv bei maximal 1,8 % der Unterrichtszeit – deutlich geringer als in öffentlichen Debatten unterstellt.
+            </p>
+            <div class="source">
+                Quelle: <a href="https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf" target="_blank" rel="noopener">Abschlussbericht „Schule von morgen" – Uni Würzburg (2025)</a>
+            </div>
+        </article>
+
+        <!-- 5 · Chart: Bildschirmzeit & PISA Mathe -->
+        <article class="card">
+            <h2 class="card-title">Bildschirmzeit und Mathematikleistung</h2>
+            <div class="chart-wrap"><canvas id="cPISA"></canvas></div>
+            <p class="card-body">
+                Lernende mit über 5 Stunden täglicher schulischer Bildschirmzeit erzielen im PISA-Test rund 50 Punkte weniger in Mathematik als Lernende mit weniger als einer Stunde. Die negative Korrelation ist statistisch signifikant.
+            </p>
+            <div class="source">Quelle: <a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-iii_765ee8c2-en/full-report.html" target="_blank" rel="noopener">OECD PISA 2022 Results (Vol. III)</a></div>
+        </article>
+
+        <!-- 6 · Chart: Ablenkung durch Bildschirme anderer -->
+        <article class="card">
+            <h2 class="card-title">Ablenkung durch Bildschirme anderer</h2>
+            <div class="chart-wrap"><canvas id="cAblenkung"></canvas></div>
+            <p class="card-body">
+                65 % der Befragten geben an, sich im Unterricht durch die digitalen Gewohnheiten ihrer Mitschülerinnen und Mitschüler abgelenkt zu fühlen. Diese Ablenkung korreliert messbar mit schlechteren Mathematikergebnissen.
+            </p>
+            <div class="source">Quelle: <a href="https://www.nea.org/nea-today/all-news-articles/pisa-2022" target="_blank" rel="noopener">NEA / OECD PISA 2022</a></div>
+        </article>
+
+        <!-- 7 · Stat: Gerätabhängigkeit -->
+        <article class="card">
+            <h2 class="card-title">Nervosität ohne digitales Gerät</h2>
+            <div class="stat-row">
+                <div class="stat-item">
+                    <span class="stat-val">45 %</span>
+                    <span class="stat-ctx">der 15-Jährigen, OECD-Schnitt</span>
+                </div>
+            </div>
+            <p class="card-body">
+                Fast die Hälfte der 15-jährigen Schülerinnen und Schüler gibt an, sich „nervös" oder „ängstlich" zu fühlen, wenn ihr digitales Gerät nicht in Reichweite ist. Der Wert ist ein OECD-Durchschnitt aus den PISA-2022-Befragungen.
+            </p>
+            <div class="source">Quelle: <a href="https://www.nea.org/nea-today/all-news-articles/pisa-2022" target="_blank" rel="noopener">NEA / OECD PISA 2022</a></div>
+        </article>
+
+        <!-- 8 · Chart: Schreibmotorik -->
+        <article class="card">
+            <h2 class="card-title">Motorische Schreibprobleme nach Geschlecht</h2>
+            <div class="chart-wrap"><canvas id="cSchreibmotorik"></canvas></div>
+            <p class="card-body">
+                87 % der Lehrkräfte beobachten eine Verschlechterung der motorischen Schreibfähigkeiten. Statistisch sind 51 % der Jungen und 31 % der Mädchen massiv betroffen. EEG-Studien belegen: Handschreiben aktiviert komplexere neuronale Netzwerke als Tippen.
+            </p>
+            <div class="source">Quelle: <a href="https://www.schreibmotorik-institut.com/projekte/" target="_blank" rel="noopener">STEP-Studie 2022 – Schreibmotorik Institut e.V.</a></div>
+        </article>
+
+        <!-- 9 · Chart: Leseverstehen -->
+        <article class="card">
+            <h2 class="card-title">Leseverstehen: Papier vs. Bildschirm</h2>
+            <div class="chart-wrap"><canvas id="cLesen"></canvas></div>
+            <p class="card-body">
+                Der „Screen-Inferiority-Effekt" ist statistisch belegt: Bei langen, informativen Sachtexten ist das Leseverstehen auf Papier messbar höher als am Bildschirm, da digital eher oberflächlich gescannt wird.
+            </p>
+            <div class="source">Quelle: Singer &amp; Alexander (2017); Delgado et al. (2018) · <a href="https://hechingerreport.org/evidence-increases-for-reading-on-paper-instead-of-screens/" target="_blank" rel="noopener">Hechinger Report</a></div>
+        </article>
+
+        <!-- 10 · Text: Inklusion -->
+        <article class="card">
+            <h2 class="card-title">Inklusion durch Assistive Technologien</h2>
+            <p class="card-body">
+                Tablets fungieren als hochflexible assistive Werkzeuge: Vorlesefunktionen, anpassbare Schriftgrößen und Echtzeit-Übersetzungen bauen körperliche oder kognitive Barrieren ab und ermöglichen individuelle Lernwege. Für Schülerinnen und Schüler mit Beeinträchtigungen bieten sie Zugänge, die mit rein analogen Mitteln kaum realisierbar wären.
+            </p>
+            <div class="source">Quelle: <a href="https://www.siemens-stiftung.org/projekte/inklusiver-mint-unterricht/" target="_blank" rel="noopener">Inklusiver MINT-Unterricht – Siemens Stiftung</a></div>
+        </article>
+
+        <!-- 11 · Chart: Infrastruktur -->
+        <article class="card">
+            <h2 class="card-title">Infrastruktur als Voraussetzung</h2>
+            <div class="chart-wrap"><canvas id="cInfrastruktur"></canvas></div>
+            <p class="card-body">
+                87 % der 14–19-Jährigen nennen schlechtes oder fehlendes WLAN als dringendstes Problem ihrer Schule; 56 % bemängeln die technische Ausstattung generell. Tablets können ihren pädagogischen Nutzen nur entfalten, wenn die Infrastruktur verlässlich funktioniert.
+            </p>
+            <div class="source">Quelle: <a href="https://www.bitkom.org/sites/main/files/2025-11/Bitkom-Studienbericht-Digitale-Schule-2025.pdf" target="_blank" rel="noopener">Bitkom – Digitale Schule 2025</a></div>
+        </article>
+
+        <!-- 12 · Quote: AWMF Ablenkung -->
+        <article class="quote-card">
+            <div class="quote-mark">"</div>
+            <blockquote>
+                „Bei laufendem Gerät ist die Versuchung, gleichzeitig zum Unterricht Spiele zu nutzen, im Internet zu surfen und Ähnlichem, sehr verlockend."
+            </blockquote>
+            <div class="quote-source">
+                AWMF-Leitlinie zur Prävention dysregulierten Bildschirmmediengebrauchs bei Kindern und Jugendlichen (2023)
+                · <a href="https://register.awmf.org/assets/guidelines/027-075l_S2k_Praevention-dysregulierten-Bildschirmmediengebrauchs-Kinder-Jugendliche_2023-09.pdf" target="_blank" rel="noopener">Volltext (PDF)</a>
+            </div>
+        </article>
+
+        <!-- 13 · Quote: Philologenverband -->
+        <article class="quote-card">
+            <div class="quote-mark">"</div>
+            <blockquote>
+                „Allein das Medium erzeugt noch keinen lernwirksamen und nachhaltigen Unterricht. Wenn mehr gewischt als gerechnet und mehr gedaddelt als im Unterricht kommuniziert wird, dann darf man darüber nachdenken, ob Steuergelder nachhaltig angelegt sind."
+            </blockquote>
+            <div class="quote-source">
+                Philologenverband Niedersachsen (PHVN) – Bildungsinvestitionen der Landesregierung müssen zu Ende gedacht werden
+            </div>
+        </article>
+
+        <!-- 14 · Quote: Tablets ab Klasse 1 (full width) -->
+        <article class="quote-card card-full">
+            <div class="quote-mark">"</div>
+            <blockquote>
+                „Tablets ab der ersten Klasse haben weder etwas mit Fortschritt noch mit Bildung zu tun."
+            </blockquote>
+            <div class="quote-source">
+                Philologenverband – zit. nach: <a href="https://www.news4teachers.de/2022/03/philologen-kritisieren-tablets-ab-klasse-1-sind-bildungspolitische-augenwischerei/" target="_blank" rel="noopener">News4teachers, 2022</a>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- SOURCES -->
+    <section class="sources-section" aria-label="Weiterführende Quellen">
+        <div class="sources-header">
+            <h2 class="sources-title">Weiterführende Quellen</h2>
+            <p class="sources-copy">Die folgenden Quellen ermöglichen eine vertiefte Auseinandersetzung mit den einzelnen Befunden.</p>
+        </div>
+        <ul class="sources-grid">
+            <li>
+                <a href="https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf" target="_blank" rel="noopener">
+                    <span class="src-type">Studie</span>
+                    <span class="src-title">Abschlussbericht „Schule von morgen"</span>
+                    <span class="src-org">Universität Würzburg, 2025</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2021.642686/full" target="_blank" rel="noopener">
+                    <span class="src-type">Studie</span>
+                    <span class="src-title">Implementing Tablets in Norwegian Primary Schools</span>
+                    <span class="src-org">Frontiers in Education, 2021</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-iii_765ee8c2-en/full-report.html" target="_blank" rel="noopener">
+                    <span class="src-type">Bericht</span>
+                    <span class="src-title">PISA 2022 Results (Volume III)</span>
+                    <span class="src-org">OECD, 2023</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.nea.org/nea-today/all-news-articles/pisa-2022" target="_blank" rel="noopener">
+                    <span class="src-type">Analyse</span>
+                    <span class="src-title">What Can We Really Learn From the 2022 PISA Test Results?</span>
+                    <span class="src-org">National Education Association (NEA)</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.bitkom.org/sites/main/files/2025-11/Bitkom-Studienbericht-Digitale-Schule-2025.pdf" target="_blank" rel="noopener">
+                    <span class="src-type">Studie</span>
+                    <span class="src-title">Digitale Schule – Studienbericht 2025</span>
+                    <span class="src-org">Bitkom e.V.</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.schreibmotorik-institut.com/projekte/" target="_blank" rel="noopener">
+                    <span class="src-type">Studie</span>
+                    <span class="src-title">STEP-Studie: Schreibmotorik im Schulalter</span>
+                    <span class="src-org">Schreibmotorik Institut e.V., 2022</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://register.awmf.org/assets/guidelines/027-075l_S2k_Praevention-dysregulierten-Bildschirmmediengebrauchs-Kinder-Jugendliche_2023-09.pdf" target="_blank" rel="noopener">
+                    <span class="src-type">Leitlinie</span>
+                    <span class="src-title">Prävention dysregulierten Bildschirmmediengebrauchs bei Kindern und Jugendlichen</span>
+                    <span class="src-org">AWMF, 2023</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://mebis.bycs.de/beitrag/basisbeitrag-mint-unterricht-digital" target="_blank" rel="noopener">
+                    <span class="src-type">Fachartikel</span>
+                    <span class="src-title">MINT-Unterricht digital</span>
+                    <span class="src-org">mebis Magazin (Bayern)</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://hechingerreport.org/evidence-increases-for-reading-on-paper-instead-of-screens/" target="_blank" rel="noopener">
+                    <span class="src-type">Reportage</span>
+                    <span class="src-title">Evidence increases for reading on paper instead of screens</span>
+                    <span class="src-org">The Hechinger Report</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.pedocs.de/volltexte/2025/33093/pdf/Philipp_2025_Lesen_digital_Komponenten_und_Prozesse.pdf" target="_blank" rel="noopener">
+                    <span class="src-type">Studie</span>
+                    <span class="src-title">Lesen digital – Komponenten und Prozesse</span>
+                    <span class="src-org">peDOCS / Philipp, 2025</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9278319/" target="_blank" rel="noopener">
+                    <span class="src-type">Studie</span>
+                    <span class="src-title">Laboured reading and musculoskeletal pain in school children</span>
+                    <span class="src-org">PubMed Central (PMC), 2022</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.lmz-bw.de/landesmedienzentrum/aktuelles/aktuelle-meldungen/detailseite/bleistift-oder-tablet-wie-lernen-kinder-leichter-lesen-und-schreiben" target="_blank" rel="noopener">
+                    <span class="src-type">Fachartikel</span>
+                    <span class="src-title">Bleistift oder Tablet? Wie lernen Kinder leichter Lesen und Schreiben?</span>
+                    <span class="src-org">Landesmedienzentrum Baden-Württemberg</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.tessin-zentrum.de/a/schreiben-mit-der-hand-foerdert-entwicklung-des-gehirns" target="_blank" rel="noopener">
+                    <span class="src-type">Fachartikel</span>
+                    <span class="src-title">Schreiben mit der Hand fördert die Entwicklung des Gehirns</span>
+                    <span class="src-org">Tessin-Zentrum</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.deutschlandfunk.de/digitalisierungsfolgen-daenemark-will-seine-kinder-retten-dlf-03244cb2-100.html" target="_blank" rel="noopener">
+                    <span class="src-type">Reportage</span>
+                    <span class="src-title">Dänemark will seine Kinder retten</span>
+                    <span class="src-org">Deutschlandfunk</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.news4teachers.de/2022/03/philologen-kritisieren-tablets-ab-klasse-1-sind-bildungspolitische-augenwischerei/" target="_blank" rel="noopener">
+                    <span class="src-type">Pressebericht</span>
+                    <span class="src-title">„Tablets ab Klasse 1 sind bildungspolitische Augenwischerei"</span>
+                    <span class="src-org">News4teachers, 2022</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.siemens-stiftung.org/projekte/inklusiver-mint-unterricht/" target="_blank" rel="noopener">
+                    <span class="src-type">Projekt</span>
+                    <span class="src-title">Inklusiver MINT-Unterricht</span>
+                    <span class="src-org">Siemens Stiftung</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://online-schule.saarland/wp-content/uploads/Handreichung_Tablets_fertig.pdf" target="_blank" rel="noopener">
+                    <span class="src-type">Handreichung</span>
+                    <span class="src-title">Der Einsatz von Tablets im Unterricht</span>
+                    <span class="src-org">Online-Schule Saarland</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+</main>
+
+<script>
+    Chart.defaults.font.family = "'Inter', sans-serif";
+    Chart.defaults.font.size   = 11;
+    Chart.defaults.color       = '#667085';
+    Chart.defaults.plugins.tooltip.backgroundColor = '#172033';
+    Chart.defaults.plugins.tooltip.padding         = 10;
+    Chart.defaults.plugins.tooltip.cornerRadius    = 8;
+
+    const GRID = 'rgba(216,222,233,.65)';
+
+    function baseAxis(extra) {
+        return Object.assign({
+            grid:   { color: GRID },
+            border: { display: false },
+            ticks:  { color: '#667085', font: { size: 11 } }
+        }, extra || {});
+    }
+
+    const noGrid = {
+        grid:   { display: false },
+        border: { display: false },
+        ticks:  { color: '#344054', font: { size: 11, weight: '600' } }
+    };
+
+    const blue      = 'rgba(37,99,235,.80)';
+    const blueSoft  = 'rgba(147,197,253,.60)';
+    const bluePale  = 'rgba(191,219,254,.55)';
+    const teal      = 'rgba(15,118,110,.76)';
+    const tealSoft  = 'rgba(94,234,212,.50)';
+    const neutral   = 'rgba(203,213,225,.70)';
+
+    /* Lernwirksamkeit nach Nutzungstyp */
+    new Chart(document.getElementById('cLernwirksamkeit'), {
+        type: 'bar',
+        indexAxis: 'y',
+        data: {
+            labels: ['Passiv', 'Aktiv', 'Konstruktiv', 'Interaktiv'],
+            datasets: [{
+                label: 'Relative Lernwirksamkeit',
+                data: [25, 50, 75, 100],
+                backgroundColor: [bluePale, blueSoft, blue, teal],
+                borderRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { display: false, beginAtZero: true, max: 115 },
+                y: noGrid
+            }
+        }
+    });
+
+    /* Bildschirmzeit & PISA Mathe */
+    new Chart(document.getElementById('cPISA'), {
+        type: 'bar',
+        data: {
+            labels: ['Unter 1 Stunde täglich', 'Über 5 Stunden täglich'],
+            datasets: [{
+                label: 'PISA-Punkte Mathematik (ca.)',
+                data: [500, 450],
+                backgroundColor: [blueSoft, blue],
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: baseAxis(),
+                y: baseAxis({
+                    min: 400, max: 540,
+                    ticks: { color: '#667085', font: { size: 11 }, callback: v => v + ' Pkt.' }
+                })
+            }
+        }
+    });
+
+    /* Ablenkung (Doughnut) */
+    new Chart(document.getElementById('cAblenkung'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Fühlen sich abgelenkt', 'Nicht abgelenkt'],
+            datasets: [{
+                data: [65, 35],
+                backgroundColor: [blue, neutral],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '66%',
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { boxWidth: 11, font: { size: 11 }, padding: 14 }
+                }
+            }
+        }
+    });
+
+    /* Schreibmotorik */
+    new Chart(document.getElementById('cSchreibmotorik'), {
+        type: 'bar',
+        data: {
+            labels: ['Jungen', 'Mädchen'],
+            datasets: [{
+                label: 'Massiv betroffene Schüler*innen in %',
+                data: [51, 31],
+                backgroundColor: [blue, blueSoft],
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: baseAxis(),
+                y: baseAxis({
+                    beginAtZero: true, max: 70,
+                    ticks: { color: '#667085', font: { size: 11 }, callback: v => v + ' %' }
+                })
+            }
+        }
+    });
+
+    /* Leseverstehen: Papier vs. Bildschirm */
+    new Chart(document.getElementById('cLesen'), {
+        type: 'bar',
+        indexAxis: 'y',
+        data: {
+            labels: ['Papier', 'Bildschirm'],
+            datasets: [{
+                label: 'Leseverstehen (relativ, Papier = 100)',
+                data: [100, 79],
+                backgroundColor: [teal, blueSoft],
+                borderRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { display: false, beginAtZero: true, max: 120 },
+                y: noGrid
+            }
+        }
+    });
+
+    /* Infrastrukturprobleme */
+    new Chart(document.getElementById('cInfrastruktur'), {
+        type: 'bar',
+        indexAxis: 'y',
+        data: {
+            labels: ['Kein oder schlechtes WLAN', 'Techn. Ausstattung mangelhaft'],
+            datasets: [{
+                label: 'Anteil der befragten Schüler in %',
+                data: [87, 56],
+                backgroundColor: [blue, blueSoft],
+                borderRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: baseAxis({
+                    beginAtZero: true, max: 100,
+                    ticks: { color: '#667085', font: { size: 11 }, callback: v => v + ' %' }
+                }),
+                y: noGrid
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,658 @@
+{
+  "daten": [
+    {
+      "ID": "D01-01",
+      "Datensatzgruppe": "Kennzahlenbasierte Aussage",
+      "Themenfeld": "Unterrichtsnutzung",
+      "Dashboard_Titel": "Instruktionsfremde Nutzung in 1:1-Tablet-Klassen",
+      "Kernaussage": "In 1:1-ausgestatteten Tablet-Klassen liegt die objektiv gemessene instruktionsfremde Nutzung, das sogenannte „Daddeln“, bei durchschnittlich nur 1,8 % der gesamten Unterrichtszeit.",
+      "Bezugsgruppe_Kontext": "1:1-ausgestattete Tablet-Klassen",
+      "Quelle": "Abschlussbericht – Schule von morgen (Uni Würzburg)",
+      "Quelle_URL": "https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken digitaler Bildung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D01-02",
+      "Datensatzgruppe": "Kennzahlenbasierte Aussage",
+      "Themenfeld": "Unterrichtsnutzung",
+      "Dashboard_Titel": "Aktive Tablet-Nutzung pro 45-Minuten-Stunde",
+      "Kernaussage": "App-basierte Erfassungen zeigen, dass Tablets in einer typischen 45-Minuten-Stunde im Durchschnitt nur fünf bis acht Minuten aktiv genutzt werden. Dies belegt einen gezielten und punktuellen didaktischen Einsatz.",
+      "Bezugsgruppe_Kontext": "typische 45-Minuten-Unterrichtsstunde",
+      "Quelle": "Abschlussbericht – Schule von morgen (Uni Würzburg)",
+      "Quelle_URL": "https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken digitaler Bildung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D01-03",
+      "Datensatzgruppe": "Kennzahlenbasierte Aussage",
+      "Themenfeld": "Lernleistung",
+      "Dashboard_Titel": "Effektstärke auf akademische Lernleistung",
+      "Kernaussage": "Eine umfangreiche Meta-Analyse von Sung et al. (2016) belegt, dass der Einsatz von Tablet-PCs eine spezifische, signifikant positive Effektstärke von g = 0,615 auf die akademische Lernleistung hat. Diese liegt deutlich über dem Durchschnitt klassischer Computernutzung.",
+      "Bezugsgruppe_Kontext": "akademische Lernleistung",
+      "Quelle": "Implementing Tablets in Norwegian Primary Schools (Frontiers)",
+      "Quelle_URL": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2021.642686/full",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken digitaler Bildung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D01-04",
+      "Datensatzgruppe": "Kennzahlenbasierte Aussage",
+      "Themenfeld": "MINT-Unterricht",
+      "Dashboard_Titel": "Effektstärke im MINT-Unterricht",
+      "Kernaussage": "Der Einsatz digitaler Werkzeuge wie interaktiver Simulationen und dynamischer Visualisierungen im mathematisch-naturwissenschaftlichen Unterricht erzielt einen mittleren, signifikant positiven Effekt auf die fachliche Leistung mit der Effektstärke g = 0,65.",
+      "Bezugsgruppe_Kontext": "mathematisch-naturwissenschaftlicher Unterricht",
+      "Quelle": "MINT Unterricht | digital (mebis Magazin)",
+      "Quelle_URL": "https://mebis.bycs.de/beitrag/basisbeitrag-mint-unterricht-digital",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken digitaler Bildung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D01-05",
+      "Datensatzgruppe": "Kennzahlenbasierte Aussage",
+      "Themenfeld": "Bildschirmzeit und Leistung",
+      "Dashboard_Titel": "Mathematikleistung bei unterschiedlicher privater Bildschirmzeit",
+      "Kernaussage": "Laut PISA-Daten 2022 erzielen Schülerinnen und Schüler, die in der Schule weniger als eine Stunde private Bildschirmzeit pro Tag verbringen, in Mathematik im Schnitt etwa 50 Punkte mehr als diejenigen, die über fünf Stunden an ihren Geräten verbringen.",
+      "Bezugsgruppe_Kontext": "PISA 2022; Schülerinnen und Schüler",
+      "Quelle": "Full Report: PISA 2022 Results (Volume III) - OECD",
+      "Quelle_URL": "https://www.oecd.org/en/publications/pisa-2022-results-volume-iii_765ee8c2-en/full-report.html",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken digitaler Bildung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D01-06",
+      "Datensatzgruppe": "Kennzahlenbasierte Aussage",
+      "Themenfeld": "Ablenkung",
+      "Dashboard_Titel": "Wahrgenommene Ablenkung durch Bildschirme anderer Lernender",
+      "Kernaussage": "65 % der befragten Schülerinnen und Schüler geben laut PISA 2022 an, sich durch die digitalen Gewohnheiten und Bildschirme ihrer Mitschüler im Unterricht abgelenkt zu fühlen. Diese Ablenkung korreliert messbar mit schlechteren Ergebnissen im Fach Mathematik.",
+      "Bezugsgruppe_Kontext": "PISA 2022; befragte Schülerinnen und Schüler",
+      "Quelle": "What Can We Really Learn From the 2022 PISA Test Results? (NEA)",
+      "Quelle_URL": "https://www.nea.org/nea-today/all-news-articles/pisa-2022",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken digitaler Bildung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D01-07",
+      "Datensatzgruppe": "Kennzahlenbasierte Aussage",
+      "Themenfeld": "Geräteverfügbarkeit und Befinden",
+      "Dashboard_Titel": "Nervosität oder Angst ohne digitales Gerät in Reichweite",
+      "Kernaussage": "Fast die Hälfte der 15-jährigen Schüler, 45 % im OECD-Schnitt, gibt an, sich „nervös“ oder „ängstlich“ zu fühlen, wenn sie ihre digitalen Geräte nicht in greifbarer Nähe haben.",
+      "Bezugsgruppe_Kontext": "15-jährige Schüler; OECD-Schnitt",
+      "Quelle": "What Can We Really Learn From the 2022 PISA Test Results? (NEA)",
+      "Quelle_URL": "https://www.nea.org/nea-today/all-news-articles/pisa-2022",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken digitaler Bildung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D01-08",
+      "Datensatzgruppe": "Kennzahlenbasierte Aussage",
+      "Themenfeld": "Schreibmotorik",
+      "Dashboard_Titel": "Beobachtete Veränderung motorischer Schreibfähigkeiten",
+      "Kernaussage": "Etwa 87 % der Lehrkräfte beobachten bei ihren Schülern eine Verschlechterung der motorischen Schreibfähigkeiten. Statistisch sind davon ca. 51 % der Jungen und 31 % der Mädchen massiv betroffen.",
+      "Bezugsgruppe_Kontext": "Lehrkräfte; Schüler; Jungen; Mädchen",
+      "Quelle": "Projekte – Schreibmotorik Institut",
+      "Quelle_URL": "https://www.schreibmotorik-institut.com/projekte/",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken digitaler Bildung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D01-09",
+      "Datensatzgruppe": "Kennzahlenbasierte Aussage",
+      "Themenfeld": "Infrastruktur",
+      "Dashboard_Titel": "WLAN und technische Ausstattung an Schulen",
+      "Kernaussage": "In einer repräsentativen Bitkom-Studie bezeichnen 87 % der 14- bis 19-jährigen Schüler schlechtes oder fehlendes WLAN als das dringlichste Problem ihrer Schule. 56 % bemängeln die technische Ausstattung allgemein.",
+      "Bezugsgruppe_Kontext": "14- bis 19-jährige Schüler",
+      "Quelle": "Digitale Schule | Studienbericht 2025 - Bitkom e.V.",
+      "Quelle_URL": "https://www.bitkom.org/sites/main/files/2025-11/Bitkom-Studienbericht-Digitale-Schule-2025.pdf",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken digitaler Bildung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D01-10",
+      "Datensatzgruppe": "Kennzahlenbasierte Aussage",
+      "Themenfeld": "Sehen und Konzentration",
+      "Dashboard_Titel": "Unkorrigierte Sehprobleme und Bildschirm-Naharbeit",
+      "Kernaussage": "Skandinavische Studien dokumentieren, dass bis zu 40 % der Schulkinder unter unkorrigierten Sehfehlern leiden. Die intensive und langanhaltende Naharbeit an Tablet-Bildschirmen verschärft diese Problematik zum sogenannten „Computer Vision Syndrome“, was sich negativ auf das Wohlbefinden und die Konzentration auswirkt.",
+      "Bezugsgruppe_Kontext": "Schulkinder",
+      "Quelle": "Laboured reading and musculoskeletal pain in school children (PMC)",
+      "Quelle_URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9278319/",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken digitaler Bildung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D02-01",
+      "Datensatzgruppe": "Direktes Zitat",
+      "Themenfeld": "Lernmotivation und Zusammenarbeit",
+      "Dashboard_Titel": "Motivation und kollaborative Lernformen",
+      "Kernaussage": "„Schüler*innen in Tablet-Schulen berichteten von signifikant höherer intrinsischer Motivation und kollaborativen Lernformen als Schüler*innen ohne 1:1-Ausstattung.“",
+      "Bezugsgruppe_Kontext": "Schüler*innen in Tablet-Schulen und Schüler*innen ohne 1:1-Ausstattung",
+      "Quelle": "Abschlussbericht – Schule von morgen (Uni Würzburg)",
+      "Quelle_URL": "https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf",
+      "Ursprungsdatei": "Digitale Bildung_ Potenziale und Risiken von Tablets im Unterricht.md",
+      "Visualisierung": "Zitatkarte"
+    },
+    {
+      "ID": "D02-02",
+      "Datensatzgruppe": "Direktes Zitat",
+      "Themenfeld": "Unterrichtsnutzung",
+      "Dashboard_Titel": "Anteil ablenkender Nutzung",
+      "Kernaussage": "„Der Anteil ablenkender Nutzung lag dabei bei maximal ca. 1,8 % der gesamten Unterrichtszeit und ist damit deutlich geringer als in öffentlichen Diskussionen häufig unterstellt.“",
+      "Bezugsgruppe_Kontext": "Unterrichtszeit",
+      "Quelle": "Abschlussbericht – Schule von morgen (Uni Würzburg)",
+      "Quelle_URL": "https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf",
+      "Ursprungsdatei": "Digitale Bildung_ Potenziale und Risiken von Tablets im Unterricht.md",
+      "Visualisierung": "Zitatkarte"
+    },
+    {
+      "ID": "D02-03",
+      "Datensatzgruppe": "Direktes Zitat",
+      "Themenfeld": "Noten und Kollaboration",
+      "Dashboard_Titel": "Zusammenhang von Ausstattung, Kollaboration, Motivation und Note",
+      "Kernaussage": "„Es zeigte sich in Deutsch, Mathematik und Biologie, dass eine systematische Tablet-Ausstattung zu mehr Kollaboration führt, was die Unterrichtsmotivation erhöht und so auch die Note verbessert (indirekter Effekt).“",
+      "Bezugsgruppe_Kontext": "Deutsch, Mathematik und Biologie",
+      "Quelle": "Abschlussbericht – Schule von morgen (Uni Würzburg)",
+      "Quelle_URL": "https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf",
+      "Ursprungsdatei": "Digitale Bildung_ Potenziale und Risiken von Tablets im Unterricht.md",
+      "Visualisierung": "Zitatkarte"
+    },
+    {
+      "ID": "D02-04",
+      "Datensatzgruppe": "Direktes Zitat",
+      "Themenfeld": "Unterrichtsnutzung",
+      "Dashboard_Titel": "Aktive Nutzung in einer 45-Minuten-Stunde",
+      "Kernaussage": "„In einer typischen 45-Minuten-Stunde wurden Tablets im Durchschnitt nur ca. fünf bis acht Minuten aktiv genutzt. Dies spricht für einen zielgerichteten, punktuellen Einsatz...“",
+      "Bezugsgruppe_Kontext": "typische 45-Minuten-Unterrichtsstunde",
+      "Quelle": "Abschlussbericht – Schule von morgen (Uni Würzburg)",
+      "Quelle_URL": "https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf",
+      "Ursprungsdatei": "Digitale Bildung_ Potenziale und Risiken von Tablets im Unterricht.md",
+      "Visualisierung": "Zitatkarte"
+    },
+    {
+      "ID": "D02-05",
+      "Datensatzgruppe": "Direktes Zitat",
+      "Themenfeld": "Materialzugriff",
+      "Dashboard_Titel": "Digitale Materialien und Verfügbarkeit",
+      "Kernaussage": "„Schüler können digitale Bücher, Arbeitsblätter und andere Ressourcen jederzeit und überall abrufen. Dies erleichtert nicht nur das Lernen, sondern reduziert auch das Risiko, Materialien zu vergessen.“",
+      "Bezugsgruppe_Kontext": "Schüler",
+      "Quelle": "Matheblatt.de",
+      "Quelle_URL": "https://matheblatt.de/pro-und-contra-tablets-in-der-schule-chancen-und-risiken-fur-schuler",
+      "Ursprungsdatei": "Digitale Bildung_ Potenziale und Risiken von Tablets im Unterricht.md",
+      "Visualisierung": "Zitatkarte"
+    },
+    {
+      "ID": "D02-06",
+      "Datensatzgruppe": "Direktes Zitat",
+      "Themenfeld": "Pädagogische Einbettung",
+      "Dashboard_Titel": "Medium und Unterrichtswirkung",
+      "Kernaussage": "„Allein das Medium erzeugt noch keinen lernwirksamen und nachhaltigen Unterricht. Wenn mehr gewischt als gerechnet und mehr gedaddelt als im Unterricht kommuniziert wird, dann darf man darüber nachdenken, ob Steuergelder nachhaltig angelegt sind.“",
+      "Bezugsgruppe_Kontext": "Unterricht",
+      "Quelle": "Bildungsinvestitionen der Landesregierung müssen zu Ende gedacht werden (Philologenverband Niedersachsen PHVN)",
+      "Quelle_URL": "",
+      "Ursprungsdatei": "Digitale Bildung_ Potenziale und Risiken von Tablets im Unterricht.md",
+      "Visualisierung": "Zitatkarte"
+    },
+    {
+      "ID": "D02-07",
+      "Datensatzgruppe": "Direktes Zitat",
+      "Themenfeld": "Schreibenlernen",
+      "Dashboard_Titel": "Handschrift beim Buchstabenlernen",
+      "Kernaussage": "„Die Handschrift bleibt eine unschlagbare gute Lernmethode, um Buchstaben zu lernen und abzuspeichern.“",
+      "Bezugsgruppe_Kontext": "Kinder beim Lesen- und Schreibenlernen",
+      "Quelle": "Bleistift oder Tablet? Wie lernen Kinder leichter Lesen und Schreiben? (LMZ BW)",
+      "Quelle_URL": "https://www.lmz-bw.de/landesmedienzentrum/aktuelles/aktuelle-meldungen/detailseite/bleistift-oder-tablet-wie-lernen-kinder-leichter-lesen-und-schreiben",
+      "Ursprungsdatei": "Digitale Bildung_ Potenziale und Risiken von Tablets im Unterricht.md",
+      "Visualisierung": "Zitatkarte"
+    },
+    {
+      "ID": "D02-08",
+      "Datensatzgruppe": "Direktes Zitat",
+      "Themenfeld": "Ablenkung",
+      "Dashboard_Titel": "Dauerverfügbarkeit laufender Geräte",
+      "Kernaussage": "„Bei laufendem Gerät ist die Versuchung, gleichzeitig zum Unterricht Spiele zu nutzen, im Internet zu surfen und Ähnlichem, sehr verlockend.“",
+      "Bezugsgruppe_Kontext": "laufendes digitales Gerät im Unterricht",
+      "Quelle": "Leitlinie zur Prävention dysregulierten Bildschirmmediengebrauchs (AWMF)",
+      "Quelle_URL": "https://register.awmf.org/assets/guidelines/027-075l_S2k_Praevention-dysregulierten-Bildschirmmediengebrauchs-Kinder-Jugendliche_2023-09.pdf",
+      "Ursprungsdatei": "Digitale Bildung_ Potenziale und Risiken von Tablets im Unterricht.md",
+      "Visualisierung": "Zitatkarte"
+    },
+    {
+      "ID": "D02-09",
+      "Datensatzgruppe": "Direktes Zitat",
+      "Themenfeld": "Kindheit und Entwicklung",
+      "Dashboard_Titel": "Veränderung spielbasierter Kindheit",
+      "Kernaussage": "„Die spielbasierte Kindheit wurde in den 90er-Jahren durch die Abkehr vom Spielen im Freien ersetzt, was zu einer „Schwäche und Zerbrechlichkeit“ unter Jugendlichen führte.“",
+      "Bezugsgruppe_Kontext": "Jugendliche; Kindheit seit den 90er-Jahren",
+      "Quelle": "Digitalisierungsfolgen: Dänemark will seine Kinder retten (Deutschlandfunk)",
+      "Quelle_URL": "https://www.deutschlandfunk.de/digitalisierungsfolgen-daenemark-will-seine-kinder-retten-dlf-03244cb2-100.html",
+      "Ursprungsdatei": "Digitale Bildung_ Potenziale und Risiken von Tablets im Unterricht.md",
+      "Visualisierung": "Zitatkarte"
+    },
+    {
+      "ID": "D02-10",
+      "Datensatzgruppe": "Direktes Zitat",
+      "Themenfeld": "Grundschulalter",
+      "Dashboard_Titel": "Tablets ab der ersten Klasse",
+      "Kernaussage": "„Tablets ab der ersten Klasse haben weder etwas mit Fortschritt noch mit Bildung zu tun.“",
+      "Bezugsgruppe_Kontext": "erste Klasse",
+      "Quelle": "Philologen kritisieren: „Tablets ab Klasse 1 sind bildungspolitische Augenwischerei“ (News4teachers)",
+      "Quelle_URL": "https://www.news4teachers.de/2022/03/philologen-kritisieren-tablets-ab-klasse-1-sind-bildungspolitische-augenwischerei/",
+      "Ursprungsdatei": "Digitale Bildung_ Potenziale und Risiken von Tablets im Unterricht.md",
+      "Visualisierung": "Zitatkarte"
+    },
+    {
+      "ID": "D03-01",
+      "Datensatzgruppe": "Faktenbasierte Zusammenfassung",
+      "Themenfeld": "Motivation und Noten",
+      "Dashboard_Titel": "Motivation, Kollaboration und Schulnoten",
+      "Kernaussage": "Schülerinnen und Schüler in 1:1-ausgestatteten Klassen weisen eine signifikant höhere intrinsische Motivation und mehr kollaboratives Lernen auf. In Fächern wie Deutsch, Mathematik und Biologie wirkt sich diese gesteigerte Motivation indirekt, im Fach Deutsch sogar direkt, positiv auf die Schulnoten aus.",
+      "Bezugsgruppe_Kontext": "1:1-ausgestattete Klassen; Deutsch, Mathematik und Biologie",
+      "Quelle": "Abschlussbericht – Schule von morgen (Uni Würzburg)",
+      "Quelle_URL": "https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken der Digitalisierung.md",
+      "Visualisierung": "Textkarte"
+    },
+    {
+      "ID": "D03-02",
+      "Datensatzgruppe": "Faktenbasierte Zusammenfassung",
+      "Themenfeld": "MINT-Unterricht",
+      "Dashboard_Titel": "Digitale Werkzeuge und Lernerfolg im MINT-Unterricht",
+      "Kernaussage": "Der Einsatz digitaler Werkzeuge wie Simulationen und dynamische Visualisierungen im mathematisch-naturwissenschaftlichen Unterricht hat einen signifikant positiven Effekt auf den Lernerfolg mit einer durchschnittlichen Effektstärke g = 0,65.",
+      "Bezugsgruppe_Kontext": "mathematisch-naturwissenschaftlicher Unterricht",
+      "Quelle": "MINT Unterricht | digital (mebis Magazin)",
+      "Quelle_URL": "https://mebis.bycs.de/beitrag/basisbeitrag-mint-unterricht-digital",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken der Digitalisierung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D03-03",
+      "Datensatzgruppe": "Faktenbasierte Zusammenfassung",
+      "Themenfeld": "Unterrichtsnutzung",
+      "Dashboard_Titel": "Instruktionsfremde Nutzung in ausgestatteten Tablet-Klassen",
+      "Kernaussage": "Die objektiv gemessene instruktionsfremde Nutzung, das sogenannte „Daddeln“, liegt in ausgestatteten Tablet-Klassen bei durchschnittlich nur 1,8 % der Unterrichtszeit, was deutlich geringer ist als oft öffentlich befürchtet.",
+      "Bezugsgruppe_Kontext": "ausgestattete Tablet-Klassen",
+      "Quelle": "Abschlussbericht – Schule von morgen (Uni Würzburg)",
+      "Quelle_URL": "https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken der Digitalisierung.md",
+      "Visualisierung": "KPI"
+    },
+    {
+      "ID": "D03-04",
+      "Datensatzgruppe": "Faktenbasierte Zusammenfassung",
+      "Themenfeld": "Inklusion und Binnendifferenzierung",
+      "Dashboard_Titel": "Assistive Funktionen und individuelle Lernwege",
+      "Kernaussage": "Tablets fungieren als hochflexible assistive Technologien, die durch Vorlesefunktionen, anpassbare Schriftgrößen und Echtzeit-Übersetzungen körperliche oder kognitive Barrieren abbauen und individuelle Lernwege ermöglichen.",
+      "Bezugsgruppe_Kontext": "körperliche oder kognitive Barrieren; individuelle Lernwege",
+      "Quelle": "Inklusiver MINT-Unterricht (Siemens Stiftung)",
+      "Quelle_URL": "https://www.siemens-stiftung.org/projekte/inklusiver-mint-unterricht/",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken der Digitalisierung.md",
+      "Visualisierung": "Textkarte"
+    },
+    {
+      "ID": "D03-05",
+      "Datensatzgruppe": "Faktenbasierte Zusammenfassung",
+      "Themenfeld": "Unterrichtsnutzung",
+      "Dashboard_Titel": "Punktuelle Nutzung im Unterricht",
+      "Kernaussage": "In einer typischen Unterrichtsstunde werden Tablets oft nur wenige Minuten aktiv für gezielte Aufgaben genutzt, anstatt als bloßer Dauerersatz für Papier zu dienen.",
+      "Bezugsgruppe_Kontext": "typische Unterrichtsstunde",
+      "Quelle": "Der Einsatz von Tablets im Unterricht (Online-Schule Saarland)",
+      "Quelle_URL": "https://online-schule.saarland/wp-content/uploads/Handreichung_Tablets_fertig.pdf",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken der Digitalisierung.md",
+      "Visualisierung": "Textkarte"
+    },
+    {
+      "ID": "D03-06",
+      "Datensatzgruppe": "Faktenbasierte Zusammenfassung",
+      "Themenfeld": "Lesen am Bildschirm",
+      "Dashboard_Titel": "Leseverstehen bei komplexen Sachtexten",
+      "Kernaussage": "Der „Screen-Inferiority-Effekt“ belegt, dass das Lesen längerer und komplexer Sachtexte am Bildschirm im Vergleich zu Papier oft zu einem geringeren Textverständnis führt, da am Bildschirm eher oberflächlich gescannt statt vertiefend gelesen wird.",
+      "Bezugsgruppe_Kontext": "längere und komplexe Sachtexte",
+      "Quelle": "Hechinger Report; peDOCS",
+      "Quelle_URL": "https://hechingerreport.org/evidence-increases-for-reading-on-paper-instead-of-screens/ | https://www.pedocs.de/volltexte/2025/33093/pdf/Philipp_2025_Lesen_digital_Komponenten_und_Prozesse.pdf",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken der Digitalisierung.md",
+      "Visualisierung": "Textkarte"
+    },
+    {
+      "ID": "D03-07",
+      "Datensatzgruppe": "Faktenbasierte Zusammenfassung",
+      "Themenfeld": "Schreibenlernen",
+      "Dashboard_Titel": "Handschrift, Tippen und digitale Stifte",
+      "Kernaussage": "Das Schreibenlernen mit Stift und Papier ist für die kognitive Entwicklung überlegen, da hierbei deutlich komplexere neuronale Netzwerke aktiviert werden als beim Tippen auf einer Tastatur. Studien mit Vorschulkindern zeigen, dass das Schreiben mit einem digitalen Stift auf der glatten Tablet-Oberfläche gegenüber dem klassischen Bleistift schlechter abschneidet.",
+      "Bezugsgruppe_Kontext": "Vorschulkinder; Schreibenlernen",
+      "Quelle": "LMZ BW; Tessin-Zentrum",
+      "Quelle_URL": "https://www.lmz-bw.de/landesmedienzentrum/aktuelles/aktuelle-meldungen/detailseite/bleistift-oder-tablet-wie-lernen-kinder-leichter-lesen-und-schreiben | https://www.tessin-zentrum.de/a/schreiben-mit-der-hand-foerdert-entwicklung-des-gehirns",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken der Digitalisierung.md",
+      "Visualisierung": "Textkarte"
+    },
+    {
+      "ID": "D03-08",
+      "Datensatzgruppe": "Faktenbasierte Zusammenfassung",
+      "Themenfeld": "Schreibmotorik",
+      "Dashboard_Titel": "Entwicklung der Schreibmotorik",
+      "Kernaussage": "Ein Großteil der Lehrkräfte beobachtet eine negative Entwicklung der Schreibmotorik, von der insbesondere Jungen durch mangelnde Ausdauer und unleserliche Schrift stark betroffen sind. Basale analoge Kulturtechniken bleiben weiterhin enorm wichtig.",
+      "Bezugsgruppe_Kontext": "Lehrkräfte; Jungen; Schreibmotorik",
+      "Quelle": "Projekte – Schreibmotorik Institut",
+      "Quelle_URL": "https://www.schreibmotorik-institut.com/projekte/",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken der Digitalisierung.md",
+      "Visualisierung": "Textkarte"
+    },
+    {
+      "ID": "D03-09",
+      "Datensatzgruppe": "Faktenbasierte Zusammenfassung",
+      "Themenfeld": "Multitasking und Bildschirmzeit",
+      "Dashboard_Titel": "Leseverstehen, Lesezeit und Bildschirmzeit",
+      "Kernaussage": "Multitasking bei Leseaufgaben am Bildschirm senkt das Leseverstehen signifikant und erhöht die Lesezeit. Eine generell sehr hohe tägliche Bildschirmzeit korreliert mit signifikant schlechteren Ergebnissen.",
+      "Bezugsgruppe_Kontext": "Leseaufgaben am Bildschirm; tägliche Bildschirmzeit",
+      "Quelle": "Leitlinie zur Prävention dysregulierten Bildschirmmediengebrauchs (AWMF)",
+      "Quelle_URL": "https://register.awmf.org/assets/guidelines/027-075l_S2k_Praevention-dysregulierten-Bildschirmmediengebrauchs-Kinder-Jugendliche_2023-09.pdf",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken der Digitalisierung.md",
+      "Visualisierung": "Textkarte"
+    },
+    {
+      "ID": "D03-10",
+      "Datensatzgruppe": "Faktenbasierte Zusammenfassung",
+      "Themenfeld": "Gesundheit",
+      "Dashboard_Titel": "Körperliche Beschwerden und Sehprobleme",
+      "Kernaussage": "Eine dauerhafte und oft ergonomisch ungünstige Nutzung von Tablets führt bei Heranwachsenden vermehrt zu Nacken- und Rückenbeschwerden und fördert Sehprobleme wie Kurzsichtigkeit (Myopie).",
+      "Bezugsgruppe_Kontext": "Heranwachsende",
+      "Quelle": "AWMF; mebis",
+      "Quelle_URL": "https://register.awmf.org/assets/guidelines/027-075l_S2k_Praevention-dysregulierten-Bildschirmmediengebrauchs-Kinder-Jugendliche_2023-09.pdf | https://mebis.bycs.de/beitrag/der-optimale-arbeitsplatz",
+      "Ursprungsdatei": "Tablets im Unterricht_ Chancen und Risiken der Digitalisierung.md",
+      "Visualisierung": "Textkarte"
+    }
+  ],
+  "kennzahlen": [
+    {
+      "Metric_ID": "M01",
+      "Item_ID": "D01-01",
+      "Kennzahl": "Instruktionsfremde Nutzung",
+      "Wert": 1.8,
+      "Einheit": "% der Unterrichtszeit",
+      "Zusatz": "durchschnittlich",
+      "Bezugsgruppe_Kontext": "1:1-ausgestattete Tablet-Klassen",
+      "Quelle": "Uni Würzburg"
+    },
+    {
+      "Metric_ID": "M02",
+      "Item_ID": "D01-02",
+      "Kennzahl": "Aktive Tablet-Nutzung",
+      "Wert": 5,
+      "Einheit": "Minuten",
+      "Zusatz": "unterer Wert in 45-Minuten-Stunde",
+      "Bezugsgruppe_Kontext": "typische Unterrichtsstunde",
+      "Quelle": "Uni Würzburg"
+    },
+    {
+      "Metric_ID": "M03",
+      "Item_ID": "D01-02",
+      "Kennzahl": "Aktive Tablet-Nutzung",
+      "Wert": 8,
+      "Einheit": "Minuten",
+      "Zusatz": "oberer Wert in 45-Minuten-Stunde",
+      "Bezugsgruppe_Kontext": "typische Unterrichtsstunde",
+      "Quelle": "Uni Würzburg"
+    },
+    {
+      "Metric_ID": "M04",
+      "Item_ID": "D01-03",
+      "Kennzahl": "Effektstärke Lernleistung",
+      "Wert": 0.615,
+      "Einheit": "g",
+      "Zusatz": "Tablet-PCs auf akademische Lernleistung",
+      "Bezugsgruppe_Kontext": "Meta-Analyse Sung et al. 2016",
+      "Quelle": "Frontiers"
+    },
+    {
+      "Metric_ID": "M05",
+      "Item_ID": "D01-04",
+      "Kennzahl": "Effektstärke MINT",
+      "Wert": 0.65,
+      "Einheit": "g",
+      "Zusatz": "digitale Werkzeuge im MINT-Unterricht",
+      "Bezugsgruppe_Kontext": "MINT-Unterricht",
+      "Quelle": "mebis Magazin"
+    },
+    {
+      "Metric_ID": "M06",
+      "Item_ID": "D01-05",
+      "Kennzahl": "Leistungsdifferenz Mathematik",
+      "Wert": 50,
+      "Einheit": "PISA-Punkte",
+      "Zusatz": "weniger als 1 Stunde versus über 5 Stunden private Bildschirmzeit pro Tag in der Schule",
+      "Bezugsgruppe_Kontext": "PISA 2022",
+      "Quelle": "OECD"
+    },
+    {
+      "Metric_ID": "M07",
+      "Item_ID": "D01-06",
+      "Kennzahl": "Wahrgenommene Ablenkung durch Bildschirme anderer",
+      "Wert": 65,
+      "Einheit": "%",
+      "Zusatz": "befragte Schülerinnen und Schüler",
+      "Bezugsgruppe_Kontext": "PISA 2022",
+      "Quelle": "NEA"
+    },
+    {
+      "Metric_ID": "M08",
+      "Item_ID": "D01-07",
+      "Kennzahl": "Nervosität oder Angst ohne digitales Gerät",
+      "Wert": 45,
+      "Einheit": "%",
+      "Zusatz": "OECD-Schnitt",
+      "Bezugsgruppe_Kontext": "15-jährige Schüler",
+      "Quelle": "NEA"
+    },
+    {
+      "Metric_ID": "M09",
+      "Item_ID": "D01-08",
+      "Kennzahl": "Lehrkräfte beobachten Verschlechterung der Schreibmotorik",
+      "Wert": 87,
+      "Einheit": "%",
+      "Zusatz": "",
+      "Bezugsgruppe_Kontext": "Lehrkräfte",
+      "Quelle": "Schreibmotorik Institut"
+    },
+    {
+      "Metric_ID": "M10",
+      "Item_ID": "D01-08",
+      "Kennzahl": "Jungen massiv betroffen",
+      "Wert": 51,
+      "Einheit": "%",
+      "Zusatz": "statistisch",
+      "Bezugsgruppe_Kontext": "Jungen",
+      "Quelle": "Schreibmotorik Institut"
+    },
+    {
+      "Metric_ID": "M11",
+      "Item_ID": "D01-08",
+      "Kennzahl": "Mädchen massiv betroffen",
+      "Wert": 31,
+      "Einheit": "%",
+      "Zusatz": "statistisch",
+      "Bezugsgruppe_Kontext": "Mädchen",
+      "Quelle": "Schreibmotorik Institut"
+    },
+    {
+      "Metric_ID": "M12",
+      "Item_ID": "D01-09",
+      "Kennzahl": "Schlechtes oder fehlendes WLAN als dringlichstes Problem",
+      "Wert": 87,
+      "Einheit": "%",
+      "Zusatz": "",
+      "Bezugsgruppe_Kontext": "14- bis 19-jährige Schüler",
+      "Quelle": "Bitkom"
+    },
+    {
+      "Metric_ID": "M13",
+      "Item_ID": "D01-09",
+      "Kennzahl": "Technische Ausstattung allgemein bemängelt",
+      "Wert": 56,
+      "Einheit": "%",
+      "Zusatz": "",
+      "Bezugsgruppe_Kontext": "14- bis 19-jährige Schüler",
+      "Quelle": "Bitkom"
+    },
+    {
+      "Metric_ID": "M14",
+      "Item_ID": "D01-10",
+      "Kennzahl": "Unkorrigierte Sehfehler",
+      "Wert": 40,
+      "Einheit": "%",
+      "Zusatz": "bis zu",
+      "Bezugsgruppe_Kontext": "Schulkinder",
+      "Quelle": "PMC"
+    },
+    {
+      "Metric_ID": "M15",
+      "Item_ID": "D02-02",
+      "Kennzahl": "Maximaler Anteil ablenkender Nutzung",
+      "Wert": 1.8,
+      "Einheit": "% der Unterrichtszeit",
+      "Zusatz": "maximal ca.",
+      "Bezugsgruppe_Kontext": "Unterrichtszeit",
+      "Quelle": "Uni Würzburg"
+    },
+    {
+      "Metric_ID": "M16",
+      "Item_ID": "D02-04",
+      "Kennzahl": "Aktive Tablet-Nutzung",
+      "Wert": 5,
+      "Einheit": "Minuten",
+      "Zusatz": "unterer Wert in 45-Minuten-Stunde",
+      "Bezugsgruppe_Kontext": "typische 45-Minuten-Stunde",
+      "Quelle": "Uni Würzburg"
+    },
+    {
+      "Metric_ID": "M17",
+      "Item_ID": "D02-04",
+      "Kennzahl": "Aktive Tablet-Nutzung",
+      "Wert": 8,
+      "Einheit": "Minuten",
+      "Zusatz": "oberer Wert in 45-Minuten-Stunde",
+      "Bezugsgruppe_Kontext": "typische 45-Minuten-Stunde",
+      "Quelle": "Uni Würzburg"
+    },
+    {
+      "Metric_ID": "M18",
+      "Item_ID": "D03-02",
+      "Kennzahl": "Durchschnittliche Effektstärke MINT",
+      "Wert": 0.65,
+      "Einheit": "g",
+      "Zusatz": "",
+      "Bezugsgruppe_Kontext": "MINT-Unterricht",
+      "Quelle": "mebis Magazin"
+    },
+    {
+      "Metric_ID": "M19",
+      "Item_ID": "D03-03",
+      "Kennzahl": "Instruktionsfremde Nutzung",
+      "Wert": 1.8,
+      "Einheit": "% der Unterrichtszeit",
+      "Zusatz": "durchschnittlich",
+      "Bezugsgruppe_Kontext": "ausgestattete Tablet-Klassen",
+      "Quelle": "Uni Würzburg"
+    }
+  ],
+  "quellen": [
+    {
+      "Quelle": "Abschlussbericht – Schule von morgen (Uni Würzburg)",
+      "Quelle_URL": "https://www.psychologie.uni-wuerzburg.de/fileadmin/06020430/2025/iPad-Studie/Abschlussbericht-Wissenschaftliche-Begleitstudie-zum-Forschungsprojekt-Schule-von-morgen.pdf",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Implementing Tablets in Norwegian Primary Schools (Frontiers)",
+      "Quelle_URL": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2021.642686/full",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "MINT Unterricht | digital (mebis Magazin)",
+      "Quelle_URL": "https://mebis.bycs.de/beitrag/basisbeitrag-mint-unterricht-digital",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Full Report: PISA 2022 Results (Volume III) - OECD",
+      "Quelle_URL": "https://www.oecd.org/en/publications/pisa-2022-results-volume-iii_765ee8c2-en/full-report.html",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "What Can We Really Learn From the 2022 PISA Test Results? (NEA)",
+      "Quelle_URL": "https://www.nea.org/nea-today/all-news-articles/pisa-2022",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Projekte – Schreibmotorik Institut",
+      "Quelle_URL": "https://www.schreibmotorik-institut.com/projekte/",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Digitale Schule | Studienbericht 2025 - Bitkom e.V.",
+      "Quelle_URL": "https://www.bitkom.org/sites/main/files/2025-11/Bitkom-Studienbericht-Digitale-Schule-2025.pdf",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Laboured reading and musculoskeletal pain in school children (PMC)",
+      "Quelle_URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9278319/",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Matheblatt.de",
+      "Quelle_URL": "https://matheblatt.de/pro-und-contra-tablets-in-der-schule-chancen-und-risiken-fur-schuler",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Bildungsinvestitionen der Landesregierung müssen zu Ende gedacht werden (Philologenverband Niedersachsen PHVN)",
+      "Quelle_URL": "",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Bleistift oder Tablet? Wie lernen Kinder leichter Lesen und Schreiben? (LMZ BW)",
+      "Quelle_URL": "https://www.lmz-bw.de/landesmedienzentrum/aktuelles/aktuelle-meldungen/detailseite/bleistift-oder-tablet-wie-lernen-kinder-leichter-lesen-und-schreiben",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Leitlinie zur Prävention dysregulierten Bildschirmmediengebrauchs (AWMF)",
+      "Quelle_URL": "https://register.awmf.org/assets/guidelines/027-075l_S2k_Praevention-dysregulierten-Bildschirmmediengebrauchs-Kinder-Jugendliche_2023-09.pdf",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Digitalisierungsfolgen: Dänemark will seine Kinder retten (Deutschlandfunk)",
+      "Quelle_URL": "https://www.deutschlandfunk.de/digitalisierungsfolgen-daenemark-will-seine-kinder-retten-dlf-03244cb2-100.html",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Philologen kritisieren: „Tablets ab Klasse 1 sind bildungspolitische Augenwischerei“ (News4teachers)",
+      "Quelle_URL": "https://www.news4teachers.de/2022/03/philologen-kritisieren-tablets-ab-klasse-1-sind-bildungspolitische-augenwischerei/",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Inklusiver MINT-Unterricht (Siemens Stiftung)",
+      "Quelle_URL": "https://www.siemens-stiftung.org/projekte/inklusiver-mint-unterricht/",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Der Einsatz von Tablets im Unterricht (Online-Schule Saarland)",
+      "Quelle_URL": "https://online-schule.saarland/wp-content/uploads/Handreichung_Tablets_fertig.pdf",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Evidence increases for reading on paper instead of screens (The Hechinger Report)",
+      "Quelle_URL": "https://hechingerreport.org/evidence-increases-for-reading-on-paper-instead-of-screens/",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Lesen digital. Komponenten und Prozesse (peDOCS)",
+      "Quelle_URL": "https://www.pedocs.de/volltexte/2025/33093/pdf/Philipp_2025_Lesen_digital_Komponenten_und_Prozesse.pdf",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Schreiben mit der Hand fördert Entwicklung des Gehirns (Tessin-Zentrum)",
+      "Quelle_URL": "https://www.tessin-zentrum.de/a/schreiben-mit-der-hand-foerdert-entwicklung-des-gehirns",
+      "Typ": "Quelle aus Ausgangsdaten"
+    },
+    {
+      "Quelle": "Der optimale Arbeitsplatz zum (digitalen) Lernen (mebis)",
+      "Quelle_URL": "https://mebis.bycs.de/beitrag/der-optimale-arbeitsplatz",
+      "Typ": "Quelle aus Ausgangsdaten"
+    }
+  ]
+}
